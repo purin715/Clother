@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloth:er</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="flexslider/flexslider.css">
+<link rel="stylesheet" href="css/desktop-uhd.css" media="screen and (min-width:1350px)">
+<link rel="stylesheet" href="css/desktop.css" media="screen and (min-width:1050px) and (max-width:1349px)">
+<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 660px) and (max-width: 1049px)">
+<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 659px)">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="flexslider/jquery.flexslider-min.js"></script>
+<script>
+$(document).ready(function( ) {
+    /* 메인메뉴 하버시 서브메뉴 나옴 */
+    $('header').mouseenter(function() {
+        $('header#sub-normal').css('background', 'rgba(0,0,0,0.8)');
+		$(this).find('.sub-menu').stop().slideDown();
+	});
+	$('header').mouseleave(function() {
+        $('header#sub-normal').css('background', 'transparent');
+		$(this).find('.sub-menu').stop().slideUp();
+	});
+    
+    /* 메인페이지 슬라이드 */
+	$('.flexslider').flexslider({animation:'slide'});
+    
+    
+    /* 스크롤 헤더 */
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 400) {
+            $('#sub-fixed').css('margin-top', '0px');
+            $('#sub-fixed nav').css('display', 'block');
+            $('#sub-normal').css('margin-top', '-100px');
+            $('#sub-normal nav').css('display', 'none');
+        } else {
+            $('#sub-fixed').css('margin-top', '-100px');
+            $('#sub-fixed nav').css('display', 'none');
+            $('#sub-normal').css('margin-top', '0px');
+            $('#sub-normal nav').css('display', 'block');
+        }
+    });
+    
+    /* 트리거 버튼 모양 변경 */
+    $('.trigger').click(function(e){
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+});
+</script>
+</head>
+
+<body>
+	<header id="sub-normal">
+		<a href="main.html"><img src="imgs/hd-fullLogo.png" alt="클로더 로고" class="hd-fullLogo"></a>
+        <a href="main.html"><img src="imgs/hd-smallLogo.png" alt="클로더 로고" class="hd-smallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>	
+		<nav>	
+			<ul class="main-menu">
+				<li><a href="#">ABOUT</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="customizing.html">커스터마이징</a></li>
+						<li><a href="production.html">제작과정</a></li>
+						<li><a href="review.html">리뷰</a></li>
+					</ul>
+                </li>
+				<li><a href="order.html">SHOP</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="#">나만의 옷 만들기</a></li>
+						<li><a href="#">세일상품</a></li>
+						<li><a href="#">추천 조합</a></li>
+					</ul>
+				</li>
+			</ul>			
+		</nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+	    </div>
+	</header>
+	
+    <header id="sub-fixed">
+        <a href="main.html"><img src="imgs/hd-scrollFullLogo.png" alt="클로더 로고" class="hd-scrollFullLogo"></a>
+        <a href="main.html"><img src="imgs/hd-scrollSmallLogo.png" alt="클로더 로고" class="hd-scrollSmallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+		<nav>			
+			<ul class="main-menu">
+				<li><a href="#">ABOUT</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="customizing.html">커스터마이징</a></li>
+						<li><a href="production.html">제작과정</a></li>
+						<li><a href="review.html">리뷰</a></li>
+					</ul>
+				</li>
+				<li><a href="order.html">SHOP</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="#">나만의 옷 만들기</a></li>
+						<li><a href="#">세일상품</a></li>
+						<li><a href="#">추천 조합</a></li>
+					</ul>
+				</li>
+			</ul>			
+		</nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+	    </div>
+	</header>
+	<div class="clear"></div>
+	
+    <section>
+          <div class="cm-bn">
+              <h3><span>C</span>USTOMIZING</h3>
+          </div>
+          <article>
+              <div class="cm-text">
+                <h2>커스터마이징</h2>
+                <h4>Customizing</h4>
+                <p>클로더는 몸에 딱 맞는 개성있는 옷을 추구합니다.<br>어떤 옵션을 선택할 수 있는지 알아보세요.</p>
+             </div>         
+
+             <div class="cm-tabs">
+
+                <input id="cm-tab-1" type="radio" name="radio-tab" class="cm-tab-select1" checked>
+                <label for="cm-tab-1" class="cm-tab-label1">FABRIC</label>
+
+                <input id="cm-tab-2" type="radio" name="radio-tab" class="cm-tab-select2">
+                <label for="cm-tab-2" class="cm-tab-label2">COLLAR</label>
+
+                <input id="cm-tab-3" type="radio" name="radio-tab" class="cm-tab-select3">
+                <label for="cm-tab-3" class="cm-tab-label3">BUTTON</label>
+
+                <input id="cm-tab-4" type="radio" name="radio-tab" class="cm-tab-select4">
+                    <label for="cm-tab-4" class="cm-tab-label4">SIZE</label>
+
+                <div class="cm-box">
+                   <div class="cm-fabric">
+                      <div class="cm-left-line"></div>
+                      <h3>FABRIC</h3>
+                      <div class="cm-right-line"></div>
+                      <div class="clear"></div>
+
+                      <ul class="cm-fabric-top">
+                         <li>
+                            <div class="box-text">
+                               <h4>옥스포드 면 원단</h4>
+                               <p>일반면보다 두껍고 세탁에 강하기 때문에 실용적입니다. 특유의 빈티지하면서 멋스러운 색감, 탄탄한 원단조직을 가지고 있습니다.</p>
+                            </div>
+                         </li>
+
+
+                         <li>
+                            <div class="box-text">
+                               <h4>린넨 원단</h4>
+                               <p>면보다 30% 이상 더 강하고, 흡습성이 매우 좋으며 높은 통기성을 자랑합니다. 재배시 물과 화학물질을 조금만 사용해 친환경적입니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>광목 원단</h4>
+                               <p>목화의 실을 뽑아 베를 짠 후 삶는 작업을 반복한 천연섬유로 얻은 누런색을 띠는 것이 특징입니다. 나염처리를 하지 않아 자극이 없습니다. </p>
+                            </div>
+                         </li>
+                      </ul>
+
+                      <ul class="cm-fabric-bottom">
+                         <li>
+                            <div class="box-text">
+                               <h4>데님 원단</h4>
+                               <p>선염사로 능직한 목면지로 질겨서 실용적입니다. 두꺼운 데님은 주로 작업복에 사용되며, 얇은 것은 스포츠웨어에 쓰입니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>캔버스 원단</h4>
+                               <p>삼베 같은 천 유화를 그릴 때 쓰는 화포, 특수 천의 일종이며, 원래는 면, 마직물에 한정되어 있었으나, 화학섬의 것도 있습니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>코듀로이 원단</h4>
+                               <p>세로 방향으로 골이 나타나는 면직불로 흔히 골덴이라고 부르는 원단입니다. 뛰어나고 두꺼운 특징 때문에 노동인들이 즐겨입었습니다. </p>
+                            </div>
+                         </li>
+                      </ul>
+                   </div>
+
+                   <div class="cm-collar">
+                      <div class="cm-left-line"></div>
+                      <h3>COLLAR</h3>
+                      <div class="cm-right-line"></div>
+                      <div class="clear"></div>
+
+                      <ul class="cm-collar-top">
+                         <li>
+                            <div class="box-text">
+                               <h4>배색 카라</h4>
+                               <p>카라에 몸판과 대조적인 색감을 입힌 카라의 종류로 심심한 셔츠에 포인트를 주기에 용이합니다. 감각적이고 센스있는 느낌을 줍니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>와이드 카라</h4>
+                               <p>카라 각도가 스탠다드 카라보다 넓은 180도에 가까운 각을 띄고 있습니다. 따라서 가슴 주변에 볼륨감이 전해지는 것이 특징입니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>스탠다드 카라</h4>
+                               <p>깃의 벌어진 각도나 길이가 가장 표준에 가까운 타입입니다. 따라서 수트의 모양에 구애 받지 않고 일상에서 무난하게 사용 가능합니다.</p>
+                            </div>
+                         </li>
+                      </ul>
+
+                      <ul class="cm-collar-bottom">
+                         <li>
+                            <div class="box-text">
+                               <h4>차이나 카라</h4>
+                               <p>자켓이나 데님이나 슬랙스에 매치하여도 멋스러움을 연출하기에 용이합니다. 하프 플라켓이나 7부 셔츠에서 많이 볼 수 있습니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>오픈 카라</h4>
+                               <p>잠옷에서 유래된 카라 스타일입니다. 이 깃은 유행을 타기 시작하면서 대표적인 캐주얼 카라 중 하나로 자리잡았습니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>버튼 다운 카라</h4>
+                               <p>카라가 바람에 날리는 것을 방지하기 위해 만들어진 카라입니다. 셔츠 밴드와 카라부분이 주저앉는 것을 방지하며 심심한 V존을 커버합니다.</p>
+                            </div>
+                         </li>
+                      </ul>
+                   </div>
+
+                   <div class="cm-button">
+                      <div class="cm-left-line"></div>
+                      <h3>BUTTON</h3>
+                      <div class="cm-right-line"></div>
+                      <div class="clear"></div>
+
+                      <ul class="cm-button-top">
+                         <li>
+                            <div class="box-text">
+                               <h4>라운딩 나무 단추</h4>
+                               <p>밝은 갈색 색상으로 테두리의 라운딩이 특징인 단추입니다. 무난한 색상과 디자인으로 어디에나 잘 어울리는 단추입니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>미니 앤틱 단추</h4>
+                               <p>앤틱 라운드 나무 단추의 크기를 축소해 놓은 단추로, 심플하고 내츄럴한 느낌을 동시에 느낄 수 있고 다양한 스타일에 잘 어울립니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>블랙 우드 단추</h4>
+                               <p>검은 색상의 무광을 띤 단추입니다. 주로 어두운 색상의 셔츠나 정장 자켓에 많이 쓰이며 분위기에 무게감을 주는 역할을 합니다. </p>
+                            </div>
+                         </li>
+                      </ul>
+
+                      <ul class="cm-button-bottom">
+                         <li>
+                            <div class="box-text">
+                               <h4>스티치 나무 단추</h4>
+                               <p>귀여운 바느질 문양이 특징인 단추로, 주로 아이들의 옷에 많이 쓰였으나 최근 빈티지 스타일이 인기를 끌면서 널리 쓰이는 단추입니다.</p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>앤틱 라운드 나무 단추</h4>
+                               <p>심플하고 내츄럴한 느낌을 동시에 느낄 수 있는 단추로 각종 의류, 소품, 홈패션, 퀄트 등 다양한 작품에 잘 어울립니다. </p>
+                            </div>
+                         </li>
+                         <li>
+                            <div class="box-text">
+                               <h4>진밤오목 나무 단추</h4>
+                               <p>오목나무로 만들어졌으며 차분한 고동색 색상으로 단정한 스타일에 잘 어울립니다. 또한 단단하게 만들어져 내구성 또한 좋습니다.</p>
+                            </div>
+                         </li>
+                      </ul>
+                   </div>
+
+                   <div class="cm-size">
+                      <div class="cm-left-line"></div>
+                      <h3>SIZE</h3>
+                      <div class="cm-right-line"></div>
+                      <div class="clear"></div>
+
+                      <ul class="cm-ac-tbtop">
+                         <li>MAN</li>
+                         <li>기장</li>
+                         <li>어깨</li>
+                         <li>가슴둘레</li>
+                         <li>팔</li>
+                      </ul>
+                      <ul>
+                         <li>XS</li>
+                         <li>63</li>
+                         <li>40</li>
+                         <li>44.5</li>
+                         <li>19</li>
+                      </ul>
+                      <ul>
+                         <li>S</li>
+                         <li>65</li>
+                         <li>42</li>
+                         <li>47.5</li>
+                         <li>19</li>
+                      </ul>
+                      <ul>
+                         <li>M</li>
+                         <li>68</li>
+                         <li>43</li>
+                         <li>50.5</li>
+                         <li>20.5</li>
+                      </ul>
+                      <ul>
+                         <li>L</li>
+                         <li>71</li>
+                         <li>45</li>
+                         <li>53.5</li>
+                         <li>22</li>
+                      </ul>         
+                      <ul class="cm-ac-tbend">
+                         <li>XL</li>
+                         <li>74</li>
+                         <li>47</li>
+                         <li>57.5</li>
+                         <li>23</li>
+                      </ul>
+
+                      <ul class="cm-ac-tbtop">
+                         <li>WOMAN</li>
+                         <li>기장</li>
+                         <li>어깨</li>
+                         <li>가슴둘레</li>
+                         <li>팔</li>
+                      </ul>
+                      <ul>
+                         <li>XXL</li>
+                         <li>76</li>
+                         <li>49</li>
+                         <li>114</li>
+                         <li>23</li>
+                      </ul>
+                      <ul>
+                         <li>XL</li>
+                         <li>74</li>
+                         <li>46</li>
+                         <li>108</li>
+                         <li>21</li>
+                      </ul>
+                      <ul>
+                         <li>L</li>
+                         <li>72</li>
+                         <li>44</li>
+                         <li>104</li>
+                         <li>20</li>
+                      </ul>
+                      <ul>
+                         <li>M</li>
+                         <li>70</li>
+                         <li>42</li>
+                         <li>102</li>
+                         <li>19</li>
+                      </ul>         
+                      <ul class="cm-ac-tbend">
+                         <li>S</li>
+                         <li>63</li>
+                         <li>37</li>
+                         <li>90</li>
+                         <li>18</li>
+                      </ul>
+                   </div>
+                </div>
+             </div>
+          </article>
+       </section>
+        <div class="clear"></div>
+    
+	<footer>
+		<div class="ft-wrap">
+			<img src="imgs/ft-logo.png" alt="푸터 로고" class="ft-logo">
+			<div class="ft-info">
+                <p>이용약관 | 개인정보처리방침</p>
+                <p>(주)Cloth:er | 사업자등록번호 : 429-19-01202 | 통신판매업신고번호 : 2020-부산동래-0167</p>
+                <p>copyright &copy; Cloth:er all rights reserved</p>
+            </div>
+			<ul class="sns">
+				<li><a href="#"><img src="imgs/ft-facebook.png" alt="페이스북"></a></li>
+				<li><a href="#"><img src="imgs/ft-twitter.png" alt="트위터"></a></li>
+				<li><a href="#"><img src="imgs/ft-instagram.png" alt="인스타그램"></a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

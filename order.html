@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloth:er</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="flexslider/flexslider.css">
+<link rel="stylesheet" href="css/desktop-uhd.css" media="screen and (min-width:1350px)">
+<link rel="stylesheet" href="css/desktop.css" media="screen and (min-width:1050px) and (max-width:1349px)">
+<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 660px) and (max-width: 1049px)">
+<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 659px)">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="flexslider/jquery.flexslider-min.js"></script>
+<script>
+$(document).ready(function( ) {
+    /* 메인메뉴 하버시 서브메뉴 나옴 */
+   $('header').mouseenter(function() {
+        $('header#sub-normal').css('background', 'rgba(0,0,0,0.8)');
+      $(this).find('.sub-menu').stop().slideDown();
+   });
+   $('header').mouseleave(function() {
+        $('header#sub-normal').css('background', 'transparent');
+      $(this).find('.sub-menu').stop().slideUp();
+   });
+    
+    /* 메인페이지 슬라이드 */
+   $('.flexslider').flexslider({animation:'slide'});
+    
+    
+    /* 스크롤 헤더 */
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 400) {
+            $('#sub-fixed').css('margin-top', '0px');
+            $('#sub-fixed nav').css('display', 'block');
+            $('#sub-normal').css('margin-top', '-100px');
+            $('#sub-normal nav').css('display', 'none');
+        } else {
+            $('#sub-fixed').css('margin-top', '-100px');
+            $('#sub-fixed nav').css('display', 'none');
+            $('#sub-normal').css('margin-top', '0px');
+            $('#sub-normal nav').css('display', 'block');
+        }
+    });
+    
+    /* 트리거 버튼 모양 변경 */
+    $('.trigger').click(function(e){
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+});
+</script>
+</head>
+
+<body>
+   <header id="sub-normal">
+      <a href="main.html"><img src="imgs/hd-fullLogo.png" alt="클로더 로고" class="hd-fullLogo"></a>
+        <a href="main.html"><img src="imgs/hd-smallLogo.png" alt="클로더 로고" class="hd-smallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>   
+      <nav>   
+         <ul class="main-menu">
+            <li><a href="#">ABOUT</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="customizing.html">커스터마이징</a></li>
+                  <li><a href="production.html">제작과정</a></li>
+                  <li><a href="review.html">리뷰</a></li>
+               </ul>
+                </li>
+            <li><a href="order.html">SHOP</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="#">나만의 옷 만들기</a></li>
+                  <li><a href="#">세일상품</a></li>
+                  <li><a href="#">추천 조합</a></li>
+               </ul>
+            </li>
+         </ul>         
+      </nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+       </div>
+   </header>
+   
+    <header id="sub-fixed">
+        <a href="main.html"><img src="imgs/hd-scrollFullLogo.png" alt="클로더 로고" class="hd-scrollFullLogo"></a>
+        <a href="main.html"><img src="imgs/hd-scrollSmallLogo.png" alt="클로더 로고" class="hd-scrollSmallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+      <nav>         
+         <ul class="main-menu">
+            <li><a href="#">ABOUT</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="customizing.html">커스터마이징</a></li>
+                  <li><a href="production.html">제작과정</a></li>
+                  <li><a href="review.html">리뷰</a></li>
+               </ul>
+            </li>
+            <li><a href="order.html">SHOP</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="#">나만의 옷 만들기</a></li>
+                  <li><a href="#">세일상품</a></li>
+                  <li><a href="#">추천 조합</a></li>
+               </ul>
+            </li>
+         </ul>         
+      </nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+       </div>
+   </header>
+   <div class="clear"></div>
+   
+   <section>
+      <div class="od-bn">
+          <h3>Make It</h3>
+            <h4>Wear It.</h4>
+            <p>하나뿐인 <strong>나만의 옷</strong>을 만들어보세요</p>
+            <ul>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">JOIN US</a></li>
+            </ul>
+      </div>
+      <article>
+            <div class="od-text">
+                <h2>세일 상품</h2>
+                <h4>Sale Product</h4>
+                <p>회원가입을 하시면 클로더의 시그니처 제품들을<br>보다 저렴한 가격으로 만나보실 수 있습니다.</p>
+            </div>
+            <ul class="ac-one">
+                <li>
+                    <h4>S/S HALF COAT</h4>
+                   <p>간절기 아우터로 입기 좋은<br>“스프링 하프코트”<br>저렴하게 구매하세요. </p> 
+                   <a href="#"><img src="imgs/od-ac-one1.jpg" alt="S/S HALF COAT"></a>
+                   <svg width="100%" height="100%">
+                      <line x1="0" y1="0" x2="1200" y2="0" class="top"/>
+                      <line x1="0" y1="540" x2="0" y2="-1080" class="left"/>
+                      <line x1="400" y1="540" x2="-800" y2="540" class="bottom"/>
+                      <line x1="400" y1="0" x2="400" y2="1620" class="right"/>
+                   </svg>
+                </li>
+                <li>
+                   <h4>CORDUROY SHIRTS</h4>
+                   <p>색깔별로 소장 각 <br> “코듀로이 셔츠”<br> 주말 할인을 놓치지 마세요! </p>
+                   <a href="#"><img src="imgs/od-ac-one2.jpg" alt="STANDARD PANTS"></a>
+                   <svg width="100%" height="100%">
+                      <line x1="0" y1="0" x2="1200" y2="0" class="top"/>
+                      <line x1="0" y1="540" x2="0" y2="-1080" class="left"/>
+                      <line x1="400" y1="540" x2="-800" y2="540" class="bottom"/>
+                      <line x1="400" y1="0" x2="400" y2="1620" class="right"/>
+                   </svg>
+                </li> 
+                <li>
+                   <h4>ASSEMBLE BAG</h4>
+                   <p>찾지 말고 조립하세요.<br>“조립하는 에코백”<br>할인된 가격에 만나보세요. </p>   
+                   <a href="#"><img src="imgs/od-ac-one3.jpg" alt="ASSEMBLE BAG"></a>
+                   <svg width="100%" height="100%">
+                      <line x1="0" y1="0" x2="1200" y2="0" class="top"/>
+                      <line x1="0" y1="540" x2="0" y2="-1080" class="left"/>
+                      <line x1="400" y1="540" x2="-800" y2="540" class="bottom"/>
+                      <line x1="400" y1="0" x2="400" y2="1620" class="right"/>
+                   </svg>
+            </li> 
+           </ul>
+         </article>
+         <div class="clear"></div>
+
+      <article>
+             <div class="od-text">
+                 <h2>나만의 옷 만들기</h2>
+                 <h4>Make Your Cloth</h4>
+                 <p>클로더는 완성된 형태를 여러 벌 제작하지 않습니다.<br>입는이가 직접 고민하고, 결정할 수 있도록 제안합니다.</p>
+             </div>
+             <div class="ac-two">
+             <div class="ac-two-img"></div>
+             <div></div>
+                <a href="#">제작하러 가기</a>
+                <div class="right">
+                   <div class="right-tabs">
+                        <input id="od-tab-1" type="radio" name="radio-tab" class="od-tab-select1" checked>
+                        <label for="od-tab-1" class="od-tab-label1">FABRIC</label>
+
+                        <input id="od-tab-2" type="radio" name="radio-tab" class="od-tab-select2">
+                        <label for="od-tab-2" class="od-tab-label2">COLLAR</label>
+
+                        <input id="od-tab-3" type="radio" name="radio-tab" class="od-tab-select3">
+                        <label for="od-tab-3" class="od-tab-label3">BUTTON</label>
+
+                        <input id="od-tab-4" type="radio" name="radio-tab" class="od-tab-select4">
+                        <label for="od-tab-4" class="od-tab-label4">COLOR</label>
+
+                        <div class="right-box">
+                            <ul class="right-fabric">
+                                <li><a href="#">옥스포드</a></li>
+                                <li><a href="#">린넨</a></li>
+                                <li><a href="#">광목</a></li>
+                                <li><a href="#">데님</a></li>
+                                <li><a href="#">캔버스</a></li>
+                                <li><a href="#">코듀로이</a></li>
+                            </ul>
+                            <ul class="right-collar">
+                                <li><a href="#">배색</a></li>
+                                <li><a href="#">와이드</a></li>
+                                <li><a href="#">스탠다드</a></li>
+                                <li><a href="#">차이나</a></li>
+                                <li><a href="#">오픈</a></li>
+                                <li><a href="#">버튼다운</a></li>
+                            </ul>
+                            <ul class="right-button">
+                                <li><a href="#">라운딩나무</a></li>
+                                <li><a href="#">미니앤틱</a></li>
+                                <li><a href="#">블랙우드</a></li>
+                                <li><a href="#">스티치나무</a></li>
+                                <li><a href="#">앤틱라운드나무</a></li>
+                                <li><a href="#">진밤오목나무</a></li>
+                            </ul>
+                            <ul class="right-color">
+                                <li><a href="#">카키</a></li>
+                                <li><a href="#">베이지</a></li>
+                                <li><a href="#">네이비</a></li>
+                                <li><a href="#">블랙</a></li>
+                                <li><a href="#">그레이</a></li>
+                                <li><a href="#">브라운</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </article>
+         <div class="clear"></div>
+
+        <article>
+             <div class="od-text">
+                 <h2>추천 조합</h2>
+                 <h4>Recommend</h4>
+                 <p>어떤 조합을 선택할 지 고민하고 계신다면,<br>클로더가 추천하는 이 달의 커스텀을 참고해보세요.</p>
+             </div>
+          <div class="od-top-line">
+             <div class="od-left-line"></div>
+             <h5>상의</h5>
+             <div class="od-right-line"></div>
+          </div>
+             <ul class="ac-three">
+                <li> 
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-three1.jpg" alt="2003 BTB SWEATSHIRT(BLUE)"></a>
+                            <h6>2003 BTB SWEATSHIRT<br>(BLUE)</h6>
+                            <p>77,000 won</p>
+                </li>
+                 <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-three2.jpg" alt="2003 BTB SWEATSHIRT(BLUE)"></a>
+                            <h6>2003 BTB SWEATSHIRT<br>(BLUE)</h6>
+                            <p>77,000 won</p>
+                </li>
+                 <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-three3.jpg" alt="2003 BTB SWEATSHIRT(GREY)"></a>
+                            <h6>2003 BTB SWEATSHIRT<br>(GREY)</h6>
+                            <p>77,000 won</p>
+                </li>
+                 <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-three4.jpg" alt="2003 BTB SWEATSHIRT(GREY)"></a>
+                            <h6>2003 BTB SWEATSHIRT<br>(GREY)</h6>
+                            <p>77,000 won</p>
+                </li>
+             </ul>
+      </article>
+         <div class="clear"></div>
+        
+        <article>
+             <div class="od-bottom-line">
+             <div class="od-left-line"></div>
+             <h5>아우터</h5>
+          <div class="od-right-line"></div>
+          </div>
+              <ul  class="ac-four">
+                <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-four1.jpg" alt="REMIND SPRING HALF COAT(NAVY)"></a>
+                            <h6>REMIND SPRING HALF COAT<br>(NAVY)</h6>
+                            <p>157,000 won</p>
+                </li>
+
+                <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-four2.jpg" alt="REMIND SPRING HALF COAT(NAVY)"></a>
+                            <h6>REMIND SPRING HALF COAT<br>(NAVY)</h6>
+                            <p>157,000 won</p>
+                </li>
+
+                <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-four3.jpg" alt="REMIND SPRING HALF COAT(OLIVE)"></a>
+                            <h6>REMIND SPRING HALF COAT<br>(OLIVE)</h6>
+                            <p>157,000 won</p>
+                </li>
+
+                <li>
+                    <div></div>
+                    <a href="#"><img src="imgs/od-ac-four4.jpg" alt="REMIND SPRING HALF COAT(OLIVE)"></a>
+                            <h6>REMIND SPRING HALF COAT<br>(OLIVE)</h6>
+                            <p>157,000 won</p>
+                </li>
+             </ul>
+      </article>
+       </section>
+        <div class="clear"></div>
+    
+   <footer>
+		<div class="ft-wrap">
+			<img src="imgs/ft-logo.png" alt="푸터 로고" class="ft-logo">
+			<div class="ft-info">
+                <p>이용약관 | 개인정보처리방침</p>
+                <p>(주)Cloth:er | 사업자등록번호 : 429-19-01202 | 통신판매업신고번호 : 2020-부산동래-0167</p>
+                <p>copyright &copy; Cloth:er all rights reserved</p>
+            </div>
+			<ul class="sns">
+				<li><a href="#"><img src="imgs/ft-facebook.png" alt="페이스북"></a></li>
+				<li><a href="#"><img src="imgs/ft-twitter.png" alt="트위터"></a></li>
+				<li><a href="#"><img src="imgs/ft-instagram.png" alt="인스타그램"></a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

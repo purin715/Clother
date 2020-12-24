@@ -1,0 +1,309 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloth:er</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="flexslider/flexslider.css">
+<link rel="stylesheet" href="css/desktop-uhd.css" media="screen and (min-width:1350px)">
+<link rel="stylesheet" href="css/desktop.css" media="screen and (min-width:1050px) and (max-width:1349px)">
+<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 660px) and (max-width: 1049px)">
+<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 659px)">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="flexslider/jquery.flexslider-min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+$(document).ready(function( ) {
+    /* 메인메뉴 하버시 서브메뉴 나옴 */
+    $('header').mouseenter(function() {
+        $('header#sub-normal').css('background', 'rgba(0,0,0,0.8)');
+		$(this).find('.sub-menu').stop().slideDown();
+	});
+	$('header').mouseleave(function() {
+        $('header#sub-normal').css('background', 'transparent');
+		$(this).find('.sub-menu').stop().slideUp();
+	});
+    
+    /* 메인페이지 슬라이드 */
+   $('.flexslider').flexslider({animation:'slide'});
+    
+    
+    /* 스크롤 헤더 */
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 400) {
+            $('#sub-fixed').css('margin-top', '0px');
+            $('#sub-fixed nav').css('display', 'block');
+            $('#sub-normal').css('margin-top', '-100px');
+            $('#sub-normal nav').css('display', 'none');
+        } else {
+            $('#sub-fixed').css('margin-top', '-100px');
+            $('#sub-fixed nav').css('display', 'none');
+            $('#sub-normal').css('margin-top', '0px');
+            $('#sub-normal nav').css('display', 'block');
+        }
+    });
+    
+    /* 트리거 버튼 모양 변경 */
+    $('.trigger').click(function(e){
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+    
+    /* 어코디언 메뉴 */
+    $("h3").on('click',function(){
+      $(this).next("p").slideToggle(100);
+    });
+    
+    /* 이미지 나타나기 */
+    $('.pd-first .pd-first-bg').hide( );
+    $('.pd-second .pd-second-bg').hide( );
+    $('.pd-first .pd-re-title').mouseover( function() { $('.pd-first .pd-first-bg').fadeIn(); });
+    $('.pd-first .pd-re-title').mouseleave(function() { $('.pd-first .pd-first-bg').fadeOut(); });
+    $('.pd-second .pd-re-title').mouseover(function() { $('.pd-second .pd-second-bg').fadeIn(); });
+    $('.pd-second .pd-re-title').mouseleave(function() { $('.pd-second .pd-second-bg').fadeOut(); });
+    
+    /* 스크롤시 페이드인 */
+    AOS.init({ easing:'ease', duration:1800 });
+});
+</script>
+</head>
+
+<body>
+   <header id="sub-normal">
+      <a href="main.html"><img src="imgs/hd-fullLogo.png" alt="클로더 로고" class="hd-fullLogo"></a>
+      <a href="main.html"><img src="imgs/hd-smallLogo.png" alt="클로더 로고" class="hd-smallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>   
+      <nav>   
+         <ul class="main-menu">
+            <li><a href="#">ABOUT</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="customizing.html">커스터마이징</a></li>
+                  <li><a href="production.html">제작과정</a></li>
+                  <li><a href="review.html">리뷰</a></li>
+               </ul>
+                </li>
+            <li><a href="order.html">SHOP</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="#">나만의 옷 만들기</a></li>
+                  <li><a href="#">세일상품</a></li>
+                  <li><a href="#">추천 조합</a></li>
+               </ul>
+            </li>
+         </ul>         
+      </nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+       </div>
+   </header>
+   
+    <header id="sub-fixed">
+        <a href="main.html"><img src="imgs/hd-scrollFullLogo.png" alt="클로더 로고" class="hd-scrollFullLogo"></a>
+        <a href="main.html"><img src="imgs/hd-scrollSmallLogo.png" alt="클로더 로고" class="hd-scrollSmallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+      <nav>         
+         <ul class="main-menu">
+            <li><a href="#">ABOUT</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="customizing.html">커스터마이징</a></li>
+                  <li><a href="production.html">제작과정</a></li>
+                  <li><a href="review.html">리뷰</a></li>
+               </ul>
+            </li>
+            <li><a href="order.html">SHOP</a>
+               <ul class="sub-menu">
+                   <div class="dot"></div>
+                  <li><a href="#">나만의 옷 만들기</a></li>
+                  <li><a href="#">세일상품</a></li>
+                  <li><a href="#">추천 조합</a></li>
+               </ul>
+            </li>
+         </ul>         
+      </nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+       </div>
+   </header>
+   <div class="clear"></div>
+   
+   <section>
+      <div class="pd-bn">
+          <h3><span>P</span>RODUCTION</h3>
+      </div>
+      
+      <article>
+            <div class="pd-text">
+                <h2>제작과정</h2>
+                <h4>Production Process</h4>
+                <p>클로더의 모든 상품은 엄격한 공정을 거칩니다.<br>상품이 제작되는 과정을 눈으로 확인해보세요.</p>
+            </div>
+            
+            <div class="pd-top-line">
+                <div class="pd-left-line"></div>
+                <h3>Ready To Make</h3>
+                <div class="pd-right-line"></div>
+                <div class="clear"></div>
+            </div>
+           
+            
+           <div class="pd-first">
+               <div class="pd-re-title">
+                   <h1>NOT<br>READY TO<br><span>W</span>EAR</h1>
+                   <i class="fa fa-angle-down"></i>
+               </div>
+
+               <div class="pd-re-text">
+                   <div class="pd-first-bg"></div>
+                   <div class="pd-nt-text">
+                       <p>매일을 함께 지내는 옷. 언제부턴가 옷은 쉬워졌습니다.</p>
+                       <p>사소한 단추 하나가 마음에 들지 않아도 이만하면 괜찮은 모양과 가격은 꽤 나쁘지 않은 구매 이유가 됩니다. 지금의 옷은 이전보다 더 싸게, 빠르게, 많이 만들어지는 것이 목표입니다.</p>
+                       <p>그 옷이 필요한지는 중요하지 않습니다. 많이 팔리면 좋고, 남을 때는 버리면 그뿐이니까요. 하지만 그런 ‘값싼 옷’이 생겨날수록 그 안에 담긴 수많은 과정들의 노력은 존중받지 못합니다.</p>
+                       <p>옷 한 벌에 담긴 사람들, 자원들, 그리고 시간들까지 그 모든 과정을 바라보며 클로더는 생각했습니다.</p>
+                       <p>Everyday, we live with ‘clothes’ And nowadays, clothes have become a consumable. Even if you don’t like some small parts, the good looks and reasonable prices give you enough reasons to purchase them.</p>   
+                       <p>In these days, the aim of current fashion industry is to be cheaper, faster, and more mass-produced than before. It doesn’t matter whether we really even need them.</p>
+                       <p>However, as ‘cheap clothes’ are created, the efforts of the corresponding processes are not respected.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pd-second">
+                <div class="pd-re-title">
+                    <h1>IT'S<br>READY TO<br><span>M</span>AKE</h1>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+
+                <div class="pd-re-text">
+                    <div class="pd-second-bg"></div>
+                    <div class="pd-it-text">
+                        <p>"몇 번 입고 버리는 여러 벌의 옷보다, 마음에 드는 한 벌이 더 합리적이지 않을까?"</p>
+                        <p>"직접 만들면 애착이 가기 마련이니까, 버려지는 옷도 줄지 않을까?"</p>
+                        <p>클로더는 "조립하는 옷"을 만듭니다. 조립하는 옷은 완성된 형태를 여러 벌 제작하지 않습니다.</p>
+                        <p>입는 사람이 직접 고민하고, 결정할 수 있도록 제안합니다.</p>
+                        <p>조금 느리고 조금 번거롭더라도 타인이 아닌 내가 중심이 되어 스스로의 기준을 만드는 것. 오래도록 손길이 닿을 옷을 만듭니다.</p>      
+                        <p>‘Wouldn’t it be more reasonable to have ‘a garment’ made in a heartfelt manner than a couple of clothes to wear once and throw them away soon?’ ‘If we made our own, wouldn’t we feel less inclined to throw it away because it attached to us?’</p>
+                        <p>“Clother” makes We do not make multiple pieces of the completed form. We just suggest some options for person who really wears them, and makes people think and decide for themselves.</p>
+                        <p>Even though it is a little slower and a bit more inconvenient, making my own standard by focusing on myself.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            
+            <div class="pd-bottom-line">
+                <div class="pd-left-line"></div>
+                <h3>제작과정</h3>
+                <div class="pd-right-line"></div>
+                <div class="clear"></div>
+            </div>
+            
+         <ul class="pd-video">
+            <li data-aos="fade-right">
+                <div class="pd-svg">
+                        <svg width="100%" height="100%" class="step1">
+                            <defs>
+                                <mask id="mask1" x="0" y="0" width="100%" height="100%">
+                                    <rect x="0" y="0" width="100%" height="100%"/>
+                                    <text x="2%" y="70%">STEP1. 패턴 그리기</text>
+                                </mask>
+                            </defs>
+                            <rect x="0" y="0" width="100%" height="100%"/>
+                        </svg>
+                    </div>
+               <video muted controls>
+                   <source src="imgs/pd-ac-bg1.mp4" type="video/mp4">
+               </video>
+                    <p>패턴 원단의 안쪽을 펼쳐두고 밑위에서 1cm, 옆선에서 1cm의 시접선을 표시합니다. 이 때 직각자나 축도자를 사용합니다.</p>
+                </li>
+                
+                <li data-aos="fade-left" data-aos-delay="100">
+                    <div class="pd-svg">
+                        <svg width="100%" height="100%" class="step2">
+                            <defs>
+                                <mask id="mask2" x="0" y="0" width="100%" height="100%">
+                                    <rect x="0" y="0" width="100%" height="100%"/>
+                                    <text x="2%" y="70%">STEP2. 원단 자르기</text>
+                                </mask>
+                            </defs>
+                            <rect x="0" y="0" width="100%" height="100%"/>
+                        </svg>
+                    </div>
+               <video muted controls>
+                   <source src="imgs/pd-ac-bg2.mp4" type="video/mp4">
+               </video>
+                    <p>패턴 제작이 완료되면 겉감끼리 서로 맞대고 밑위와 옆선에 그린 시접선을 따라서 재단가위로 원단을 잘라냅니다.</p>
+            </li>
+               
+                <li data-aos="fade-right">
+                    <div class="pd-svg">
+                        <svg width="100%" height="100%" class="step3">
+                            <defs>
+                                <mask id="mask3" x="0" y="0" width="100%" height="100%">
+                                    <rect x="0" y="0" width="100%" height="100%"/>
+                                    <text x="2%" y="70%">STEP3. 옷 제작하기</text>
+                                </mask>
+                            </defs>
+                            <rect x="0" y="0" width="100%" height="100%"/>
+                        </svg>
+                    </div>
+               <video muted controls>
+                   <source src="imgs/pd-ac-bg3.mp4" type="video/mp4">
+               </video>
+                    <p>재봉틀로 박음질을 합니다. 재봉틀로 박음질하면 시간을 아낄 수는 있지만 이것은 숙련자들에게 추천하는 방법입니다.</p>
+                </li>
+                
+                <li data-aos="fade-left" data-aos-delay="100">
+                    <div class="pd-svg">
+                        <svg width="100%" height="100%" class="step4">
+                            <defs>
+                                <mask id="mask4" x="0" y="0" width="100%" height="100%">
+                                    <rect x="0" y="0" width="100%" height="100%"/>
+                                    <text x="2%" y="70%">STEP4. 상품 출고하기</text>
+                                </mask>
+                            </defs>
+                            <rect x="0" y="0" width="100%" height="100%"/>
+                        </svg>
+                    </div>
+               <video muted controls>
+                   <source src="imgs/pd-ac-bg4.mp4" type="video/mp4">
+               </video>
+                    <p>앞선 세 공정을 거친 의류는 출고됩니다. 공동구매에 주문제작으로 진행되기 때문에 한번에 제작하는 수량이 정해져있습니다.</p>
+            </li>
+            </ul>
+        </article>
+   </section>
+    <div class="clear"></div>
+    
+   <footer>
+		<div class="ft-wrap">
+			<img src="imgs/ft-logo.png" alt="푸터 로고" class="ft-logo">
+			<div class="ft-info">
+                <p>이용약관 | 개인정보처리방침</p>
+                <p>(주)Cloth:er | 사업자등록번호 : 429-19-01202 | 통신판매업신고번호 : 2020-부산동래-0167</p>
+                <p>copyright &copy; Cloth:er all rights reserved</p>
+            </div>
+			<ul class="sns">
+				<li><a href="#"><img src="imgs/ft-facebook.png" alt="페이스북"></a></li>
+				<li><a href="#"><img src="imgs/ft-twitter.png" alt="트위터"></a></li>
+				<li><a href="#"><img src="imgs/ft-instagram.png" alt="인스타그램"></a></li>
+			</ul>
+		</div>
+	</footer>
+</body>
+</html>

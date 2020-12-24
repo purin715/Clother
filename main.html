@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloth:er</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/main-reset.css">
+<link rel="stylesheet" href="flexslider/flexslider.css">
+<link rel="stylesheet" href="css/desktop-uhd.css" media="screen and (min-width:1350px)">
+<link rel="stylesheet" href="css/desktop.css" media="screen and (min-width:1050px) and (max-width:1349px)">
+<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 660px) and (max-width: 1049px)">
+<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 659px)">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="flexslider/jquery.flexslider-min.js"></script>
+<script>
+$(document).ready(function( ) {
+    /* 메인메뉴 하버시 서브메뉴 나옴 */
+    $('header#sub-normal').mouseenter(function() {
+        $('header#sub-normal').css('background', 'rgba(0,0,0,0.8)');
+		$(this).find('.sub-menu').stop().slideDown();
+	});
+	$('header#sub-normal').mouseleave(function() {
+        $('header#sub-normal').css('background', 'transparent');
+		$(this).find('.sub-menu').stop().slideUp();
+	});
+    
+    /* 메인페이지 슬라이드 */
+	$('.flexslider').flexslider({animation:'slide'});
+    
+    /* 트리거 버튼 모양 변경 */
+    $('.trigger').click(function(e){
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+});
+</script>
+</head>
+
+<body>
+	<header id="sub-normal">
+		<a href="main.html"><img src="imgs/hd-fullLogo.png" alt="클로더 로고" class="hd-fullLogo"></a>
+		<a href="main.html"><img src="imgs/hd-smallLogo.png" alt="클로더 로고" class="hd-smallLogo"></a>
+		 <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>	
+		<nav>
+			<ul class="main-menu">
+				<li><a href="#">ABOUT</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="customizing.html">커스터마이징</a></li>
+						<li><a href="production.html">제작과정</a></li>
+						<li><a href="review.html">리뷰</a></li>
+					</ul>
+				</li>
+				<li><a href="order.html">SHOP</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="#">나만의 옷 만들기</a></li>
+						<li><a href="#">세일상품</a></li>
+						<li><a href="#">추천 조합</a></li>
+					</ul>
+				</li>
+			</ul>	
+		</nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+	    </div>
+	</header>
+    <div class="clear"></div>
+	
+	<section>
+           <div class="all">
+            <div class="flexslider">
+                <ul class="slides">
+                    <li><img src="imgs/uhd-slide1.png" alt="자켓"></li>
+                    <li><img src="imgs/uhd-slide2.png" alt="바지"></li>
+                    <li><img src="imgs/uhd-slide3.png" alt="맨투맨"></li>
+                    <li><img src="imgs/uhd-slide4.png" alt="반바지"></li>
+                </ul>
+            </div>
+            <div class="main-wrap">
+                <p>하나뿐인 <span>나만의 옷</span>을 만들어보세요</p>
+                <h3>Make It</h3>
+                <h4>Wear It.</h4>
+                <a href="order.html">shop now</a>
+            </div>
+        </div>
+    </section>	
+	
+</body>
+</html>

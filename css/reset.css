@@ -1,0 +1,15 @@
+@charset "utf-8";
+/* CSS Document */
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
+body { color: #333; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; font-weight: 400; background: #F2F2F2; }
+a { display: block; text-decoration: none; outline: none; border: 0; }
+ul { list-style: none; }
+ul li { float: left; }
+img { display: block; }
+.clear { clear: both; }

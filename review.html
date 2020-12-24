@@ -1,0 +1,544 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cloth:er</title>
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="flexslider/flexslider.css">
+<link rel="stylesheet" href="css/desktop-uhd.css" media="screen and (min-width:1350px)">
+<link rel="stylesheet" href="css/desktop.css" media="screen and (min-width:1050px) and (max-width:1349px)">
+<link rel="stylesheet" href="css/tablet.css" media="screen and (min-width: 660px) and (max-width: 1049px)">
+<link rel="stylesheet" href="css/mobile.css" media="screen and (max-width: 659px)">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="flexslider/jquery.flexslider-min.js"></script>
+<script>
+$(document).ready(function( ) {
+    /* 메인메뉴 하버시 서브메뉴 나옴 */
+	$('header').mouseenter(function() {
+        $('header#sub-normal').css('background', 'rgba(0,0,0,0.8)');
+		$(this).find('.sub-menu').stop().slideDown();
+	});
+	$('header').mouseleave(function() {
+        $('header#sub-normal').css('background', 'transparent');
+		$(this).find('.sub-menu').stop().slideUp();
+	});
+    
+    /* 메인페이지 슬라이드 */
+	$('.flexslider').flexslider({animation:'slide'});
+    
+    /* 스크롤 헤더 */
+    $(window).scroll(function() {
+        if($(this).scrollTop() > 400) {
+            $('#sub-fixed').css('margin-top', '0px');
+            $('#sub-fixed nav').css('display', 'block');
+            $('#sub-normal').css('margin-top', '-100px');
+            $('#sub-normal nav').css('display', 'none');
+        } else {
+            $('#sub-fixed').css('margin-top', '-100px');
+            $('#sub-fixed nav').css('display', 'none');
+            $('#sub-normal').css('margin-top', '0px');
+            $('#sub-normal nav').css('display', 'block');
+        }
+    });
+    
+    /* 트리거 버튼 모양 변경 */
+    $('.trigger').click(function(e){
+        e.preventDefault();
+        $(this).toggleClass('active');
+    });
+    
+    /* 모달뷰 */
+    $('.rv-modal').hide();
+    
+    $('.rv-top > li:nth-child(1)').click(function() { $('.rv-modal.view1').fadeIn(); });
+    $('.rv-top ul > li:nth-child(1)').click(function() { $('.rv-modal.view2').fadeIn(); });
+    $('.rv-top ul > li:nth-child(2)').click(function() { $('.rv-modal.view3').fadeIn(); });
+    $('.rv-middle > li:nth-child(1)').click(function() { $('.rv-modal.view4').fadeIn(); });
+    $('.rv-middle > li:nth-child(2)').click(function() { $('.rv-modal.view5').fadeIn(); });
+    $('.rv-middle > li:nth-child(3)').click(function() { $('.rv-modal.view6').fadeIn(); });
+    $('.rv-bottom ul > li:nth-child(1)').click(function() { $('.rv-modal.view7').fadeIn(); });
+    $('.rv-bottom ul > li:nth-child(2)').click(function() { $('.rv-modal.view8').fadeIn(); });
+    $('.rv-bottom > li:nth-child(2)').click(function() { $('.rv-modal.view9').fadeIn(); });
+    
+     /* 닫힘 버튼 */
+    $('.rv-modal-content .close').click(function() {
+        $('.rv-modal').fadeOut();
+    });
+    
+    $(document).mouseup(function (e) {
+        var container = $('.rv-modal');
+        if( container.has(e.target).length === 0) {
+          container.fadeOut();
+        }
+    });
+    
+    /* 이전 버튼 */
+    $('.rv-modal.view2 .rv-modal-content .prev').click(function() { $('.rv-modal.view2').fadeOut(); $('.rv-modal.view1').fadeIn(); });
+    $('.rv-modal.view3 .rv-modal-content .prev').click(function() { $('.rv-modal.view3').fadeOut(); $('.rv-modal.view2').fadeIn(); });
+    $('.rv-modal.view4 .rv-modal-content .prev').click(function() { $('.rv-modal.view4').fadeOut(); $('.rv-modal.view3').fadeIn(); });
+    $('.rv-modal.view5 .rv-modal-content .prev').click(function() { $('.rv-modal.view5').fadeOut(); $('.rv-modal.view4').fadeIn(); });
+    $('.rv-modal.view6 .rv-modal-content .prev').click(function() { $('.rv-modal.view6').fadeOut(); $('.rv-modal.view5').fadeIn(); });
+    $('.rv-modal.view7 .rv-modal-content .prev').click(function() { $('.rv-modal.view7').fadeOut(); $('.rv-modal.view6').fadeIn(); });
+    $('.rv-modal.view8 .rv-modal-content .prev').click(function() { $('.rv-modal.view8').fadeOut(); $('.rv-modal.view7').fadeIn(); });
+    $('.rv-modal.view9 .rv-modal-content .prev').click(function() { $('.rv-modal.view9').fadeOut(); $('.rv-modal.view8').fadeIn(); });
+  
+    /* 다음 버튼 */
+    $('.rv-modal.view1 .rv-modal-content .next').click(function() { $('.rv-modal.view1').fadeOut(); $('.rv-modal.view2').fadeIn(); });
+    $('.rv-modal.view2 .rv-modal-content .next').click(function() { $('.rv-modal.view2').fadeOut(); $('.rv-modal.view3').fadeIn(); });
+    $('.rv-modal.view3 .rv-modal-content .next').click(function() { $('.rv-modal.view3').fadeOut(); $('.rv-modal.view4').fadeIn(); });
+    $('.rv-modal.view4 .rv-modal-content .next').click(function() { $('.rv-modal.view4').fadeOut(); $('.rv-modal.view5').fadeIn(); });
+    $('.rv-modal.view5 .rv-modal-content .next').click(function() { $('.rv-modal.view5').fadeOut(); $('.rv-modal.view6').fadeIn(); });
+    $('.rv-modal.view6 .rv-modal-content .next').click(function() { $('.rv-modal.view6').fadeOut(); $('.rv-modal.view7').fadeIn(); });
+    $('.rv-modal.view7 .rv-modal-content .next').click(function() { $('.rv-modal.view7').fadeOut(); $('.rv-modal.view8').fadeIn(); });
+    $('.rv-modal.view8 .rv-modal-content .next').click(function() { $('.rv-modal.view8').fadeOut(); $('.rv-modal.view9').fadeIn(); });
+});
+</script>
+</head>
+
+<body>
+	<header id="sub-normal">
+		<a href="main.html"><img src="imgs/hd-fullLogo.png" alt="클로더 로고" class="hd-fullLogo"></a>
+		<a href="main.html"><img src="imgs/hd-smallLogo.png" alt="클로더 로고" class="hd-smallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>	
+		<nav>	
+			<ul class="main-menu">
+				<li><a href="#">ABOUT</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="customizing.html">커스터마이징</a></li>
+						<li><a href="production.html">제작과정</a></li>
+						<li><a href="review.html">리뷰</a></li>
+					</ul>
+                </li>
+				<li><a href="order.html">SHOP</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="#">나만의 옷 만들기</a></li>
+						<li><a href="#">세일상품</a></li>
+						<li><a href="#">추천 조합</a></li>
+					</ul>
+				</li>
+			</ul>			
+		</nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+	    </div>
+	</header>
+	
+    <header id="sub-fixed">
+        <a href="main.html"><img src="imgs/hd-scrollFullLogo.png" alt="클로더 로고" class="hd-scrollFullLogo"></a>
+        <a href="main.html"><img src="imgs/hd-scrollSmallLogo.png" alt="클로더 로고" class="hd-scrollSmallLogo"></a>
+        <a href="#" class="trigger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+		<nav>			
+			<ul class="main-menu">
+				<li><a href="#">ABOUT</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="customizing.html">커스터마이징</a></li>
+						<li><a href="production.html">제작과정</a></li>
+						<li><a href="review.html">리뷰</a></li>
+					</ul>
+				</li>
+				<li><a href="order.html">SHOP</a>
+					<ul class="sub-menu">
+					    <div class="dot"></div>
+						<li><a href="#">나만의 옷 만들기</a></li>
+						<li><a href="#">세일상품</a></li>
+						<li><a href="#">추천 조합</a></li>
+					</ul>
+				</li>
+			</ul>			
+		</nav>
+        <div class="search-box">
+            <input type="text" name="search" class="search-txt" placeholder="검색어 입력">
+            <a href="#" class="search-btn"><i class="fa fa-search"></i></a>
+	    </div>
+	</header>
+	<div class="clear"></div>
+	
+	<section>
+		<div class="rv-bn">
+		    <h3><span>R</span>EVIEW</h3>
+		</div>
+		<article>
+		    <div class="rv-text">
+                <h2>베스트 리뷰</h2>
+                <h4>Best Review</h4>
+                <p>직접 옷을 만든 고객님들의 생생한 후기를 만나보세요.</p>
+            </div>
+
+            <div class="rv-imgs">
+                <ul class="rv-top">
+                    <li>
+                        <div class="img"></div>
+                        <h4>MODULAR LOGO T-SHIRTS</h4>
+                        <p>48,000won</p>
+                    </li>
+                    <li>
+                       <ul>
+                           <li>
+                               <div class="img"></div>
+                               <h4>REGULAR PANTS</h4>
+                               <p>78,000won</p>
+                           </li>
+                           <li>
+                               <div class="img"></div>
+                               <h4>MODULAR SHIRTS</h4>
+                               <p>48,000won</p>
+                           </li>
+                        </ul>
+                </ul>
+                
+                <ul class="rv-middle">
+                    <li>
+                        <div class="img"></div>
+                        <h4>HALF SHIRTS</h4>
+                        <p>58,000won</p>
+                    </li>
+                    <li>
+                        <div class="img"></div>
+                        <h4>REGULAR PANTS</h4>
+                        <p>78,000won</p>
+                    </li>
+                    <li>
+                        <div class="img"></div>
+                        <h4>REGULAR SKIRT</h4>
+                        <p>68,000won</p>
+                    </li>
+                </ul>
+                
+                <ul class="rv-bottom">
+                   <li>
+                      <ul>
+                        <li>
+                            <div class="img"></div>
+                            <h4>WOOL 100 BEANIE</h4>
+                            <p>28,000won</p>
+                        </li>
+                        <li>
+                            <div class="img"></div>
+                            <h4>REGULAR SHIRTS</h4>
+                            <p>58,000won</p>
+                        </li>
+                    </ul>                       
+                   </li>
+                    <li>
+                        <div class="img"></div>
+                        <h4>COTTON REGULAR PANTS</h4>
+                        <p>68,000won</p>
+                    </li>
+                </ul>
+            </div>
+        </article>
+	</section>
+    <div class="clear"></div>
+    
+	<footer>
+		<div class="ft-wrap">
+			<img src="imgs/ft-logo.png" alt="푸터 로고" class="ft-logo">
+			<div class="ft-info">
+                <p>이용약관 | 개인정보처리방침</p>
+                <p>(주)Cloth:er | 사업자등록번호 : 429-19-01202 | 통신판매업신고번호 : 2020-부산동래-0167</p>
+                <p>copyright &copy; Cloth:er all rights reserved</p>
+            </div>
+			<ul class="sns">
+				<li><a href="#"><img src="imgs/ft-facebook.png" alt="페이스북"></a></li>
+				<li><a href="#"><img src="imgs/ft-twitter.png" alt="트위터"></a></li>
+				<li><a href="#"><img src="imgs/ft-instagram.png" alt="인스타그램"></a></li>
+			</ul>
+		</div>
+	</footer>
+	
+	<!-- 모달뷰 -->
+	<div class="rv-modal view1">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img1.jpg"></div>
+            <div class="right">
+             <div class="top">
+                 <img src="imgs/rv-pre-img1.jpg">
+                 <p>
+                     MODULAR LOGO T-SHIRTS<br>
+                     <span>★★★★★</span>
+                 </p>
+                 <p class="gray">손지선</p>
+              </div>
+              <div class="bottom">
+                <hr>
+                 <p>
+                     선택한 옵션
+                  </p>
+                  <p class="gray">
+                      색상 : 화이트 (White)<br>
+                      사이즈 : M (44-55)
+                  </p>
+                  <hr>
+                  <p>체형을 추천받아 옷을 주문할 수 있는 시스템이 정말 마음에 들었습니다. 상체가 짧고 어깨가 넓은 체형이다 보니 기성복은 핏이 이상하거나 몸에 꽉 끼일 때가 많았는데 신체부위별 치수를 선택하고 그에 맞게 보완된 사이즈를 추천해주는 것이 꽤나 유용했습니다. 또 단추나 봉제선, 원단 등 여러가지 디테일을 자유롭게 바꿀 수 있다는 점이 옷을 구매하는데 있어 재미로 다가왔던 것 같습니다.</p>
+              </div>
+          </div>
+          </div>
+      </div>
+              
+      <div class="rv-modal view2">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img2.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img2.jpg">
+                     <p>
+                         COTTON REGULAR PANTS<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">유진호</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 연청 (Light Denim)<br>
+                          사이즈 : M (30)
+                      </p>
+                      <hr>
+                      <p>직접 커스텀할 수 있는 옷이 있다고 해서 호기심 반으로 구매하게 되었습니다. 그냥 색이나 재질 정도만 커스텀하겠지 싶었던 생각과는 다르게 여러가지를 고를 수 있어서 한번 놀랐고, 그에 비해 생각보다 배송기간이 빠르다는 점에 두번 놀랐습니다. 옷의 퀄리티가 매우 좋습니다. 봉제선과 주머니 유무, 마감 라인까지 선택할 수 있게 만들어 놓은 것을 보고 세심함에 감탄하고 갑니다.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="rv-modal view3">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img3.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img3.jpg">
+                     <p>
+                         MODULAR LOGO T-SHIRTS<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">김채연</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 오렌지 (Orange)<br>
+                          사이즈 : S (44)
+                      </p>
+                      <hr>
+                      <p>상체가 작은 편이라 상의를 구매할때 항상 난감했었는데 체형을 추천받아 옷을 주문할 수 있는 시스템이 정말 마음에 들었습니다. 또 다른 사이트보다 사이즈가 다양해서 선택지가 다양해서 좋았습니다. 또한 저는 티셔츠를 구매했지만 셔츠나 바지 등 다른 제품들은 색상뿐만 아니라 단추색, 봉제선 등 디테일한 부분까지 커스텀할 수 있어서 신경을 많이 쓰신 느낌에 감동받았습니다.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+       <div class="rv-modal view4">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img4.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img4.jpg">
+                     <p>
+                         COTTON HALF SHIRTS<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">서나영</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 네이비 (Navy)<br>
+                          사이즈 : M (44-55)
+                      </p>
+                      <hr>
+                      <p>체형을 추천받아 옷을 주문할 수 있는 시스템이 정말 마음에 들었습니다. 상체가 짧고 어깨가 넓은 체형이다 보니 기성복은 핏이 이상하거나 몸에 꽉 끼일 때가 많았는데 신체부위별 치수를 선택하고 그에 맞게 보완된 사이즈를 추천해주는 것이 꽤나 유용했습니다. 또 단추나 봉제선, 원단 등 여러가지 디테일을 자유롭게 바꿀 수 있다는 점이 옷을 구매하는데 있어 재미로 다가왔던 것 같습니다.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="rv-modal view5">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img5.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img5.jpg">
+                     <p>
+                         COTTON REGULAR PANTS<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">박은채</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 진청 (Denim)<br>
+                          사이즈 : M (30)
+                      </p>
+                      <hr>
+                      <p>직접 커스텀할 수 있는 옷이 있다고 해서 호기심 반으로 구매하게 되었습니다. 그냥 색이나 재질 정도만 커스텀하겠지 싶었던 생각과는 다르게 여러가지를 고를 수 있어서 한번 놀랐고, 그에 비해 생각보다 배송기간이 빠르다는 점에 두번 놀랐습니다. 옷의 퀄리티가 매우 좋습니다. 봉제선과 주머니 유무, 마감 라인까지 선택할 수 있게 만들어 놓은 것을 보고 세심함에 감탄하고 갑니다.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="rv-modal view6">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img6.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img6.jpg">
+                     <p>
+                         COTTON REGULAR SKIRT<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">신재희</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 베이지 (Beige)<br>
+                          사이즈 : M (25)
+                      </p>
+                      <hr>
+                      <p>상체가 작은 편이라 상의를 구매할때 항상 난감했었는데 체형을 추천받아 옷을 주문할 수 있는 시스템이 정말 마음에 들었습니다. 또 다른 사이트보다 사이즈가 다양해서 선택지가 다양해서 좋았습니다. 또한 저는 스커트를 구매했지만 셔츠나 바지 등 다른 제품들은 색상뿐만 아니라 단추색, 봉제선 등 디테일한 부분까지 커스텀할 수 있어서 신경을 많이 쓰신 느낌에 감동받았습니다.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+       <div class="rv-modal view7">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img7.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img7.jpg">
+                     <p>
+                         SWEAT WOOL 100 BEANIE<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">박준호</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 머스타드 (Mustard)<br>
+                          사이즈 : FREE
+                      </p>
+                      <hr>
+                      <p>체형을 추천받아 옷을 주문할 수 있는 시스템이 정말 마음에 들었습니다. 상체가 짧고 어깨가 넓은 체형이다 보니 기성복은 핏이 이상하거나 몸에 꽉 끼일 때가 많았는데 신체부위별 치수를 선택하고 그에 맞게 보완된 사이즈를 추천해주는 것이 꽤나 유용했습니다. 또 단추나 봉제선, 원단 등 여러가지 디테일을 자유롭게 바꿀 수 있다는 점이 옷을 구매하는데 있어 재미로 다가왔던 것 같습니다.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+      <div class="rv-modal view8">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-nextBtn.gif" class="next">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img8.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img8.jpg">
+                     <p>
+                         COTTON REGULAR SHIRTS<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">임민욱</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 진청 (Denim)<br>
+                          사이즈 : L (55-66)
+                      </p>
+                      <hr>
+                      <p>직접 커스텀할 수 있는 옷이 있다고 해서 호기심 반으로 구매하게 되었습니다. 그냥 색이나 재질 정도만 커스텀하겠지 싶었던 생각과는 다르게 여러가지를 고를 수 있어서 한번 놀랐고, 그에 비해 생각보다 배송기간이 빠르다는 점에 두번 놀랐습니다. 옷의 퀄리티가 매우 좋습니다. 봉제선과 주머니 유무, 마감 라인까지 선택할 수 있게 만들어 놓은 것을 보고 세심함에 감탄하고 갑니다.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="rv-modal view9">
+        <div class="rv-modal-content">
+            <img src="imgs/rv-prevBtn.gif" class="prev">
+            <img src="imgs/rv-closeBtn.gif" class="close">
+            <div class="left"><img src="imgs/rv-main-img9.jpg"></div>
+              <div class="right">
+                 <div class="top">
+                     <img src="imgs/rv-pre-img9.jpg">
+                     <p>
+                         COTTON REGULAR PANTS<br>
+                         <span>★★★★★</span>
+                     </p>
+                     <p class="gray">장소희</p>
+                  </div>
+                  <div class="bottom">
+                    <hr>
+                     <p>
+                         선택한 옵션
+                      </p>
+                      <p class="gray">
+                          색상 : 아이보리 (Ivory)<br>
+                          사이즈 : M (44-55)
+                      </p>
+                      <hr>
+                      <p>상체가 작은 편이라 상의를 구매할때 항상 난감했었는데 체형을 추천받아 옷을 주문할 수 있는 시스템이 정말 마음에 들었습니다. 또 다른 사이트보다 사이즈가 다양해서 선택지가 다양해서 좋았습니다. 또한 저는 스커트를 구매했지만 셔츠나 바지 등 다른 제품들은 색상뿐만 아니라 단추색, 봉제선 등 디테일한 부분까지 커스텀할 수 있어서 신경을 많이 쓰신 느낌에 감동받았습니다.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+</body>
+</html>
